@@ -10,9 +10,10 @@ if(isset($_POST['Title']) || isset($_POST['Description'])) {
     $statement = $db->prepare($query);
     $results = $statement->execute([$title, $description]);
     $db = null;
+    header('Location: http://localhost/toDoList');
     exit();
 } else { 
     echo "big error";
 }
-header('Location: /xampp/htdocs/toDoList/index.php');
+
 ?>

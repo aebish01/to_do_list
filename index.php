@@ -13,63 +13,9 @@ $todos = $db->query("SELECT * FROM todoitems");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="view/main.css">
+    <link rel="stylesheet" href="http://localhost/toDoList/view/main.css">
     <title>Document</title>
-    <style>
-        body {
-    border-style: solid;
-    border-color: gray;
-}
 
-h1 {
-    background-color: blue;
-    color: white;
-    margin-top: 0%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.todo-item h2 {
-    color: darkblue;
-    margin: 0%;
-}
-.todo-item small {
-    color: darkblue;
-    margin: 0%;
-    font-size: 16px;
-    
-}
-.todo-item button {
-    float: right;
-    margin-right: 10%;
-    font-size: 40px;
-    color: red;
-    width: 5px;
-    padding: 2px;
-    border: none;
-    background-color: bisque;
-
-}
-.todo-item {
-    background-color: bisque;
-    padding-left: 5%;
-    border: grey solid 2px;
-    margin: 10px;
-    border-radius: 25px 25px 25px;
-}
-.addSect {
-    background-color: blue;
-}
-.addSect input {
-    height: 30px;
-    width: 400px;
-    margin: 5px;
-    border-radius: 5px 5px 5px;
-}
-.addSect button {
-    margin-left: 20px;
-}
-    </style>
 </head>
 <body>
     <header>
