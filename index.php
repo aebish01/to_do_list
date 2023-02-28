@@ -4,7 +4,7 @@ require('controller/connection.php');
 
 
 $todos = $db->query("SELECT * FROM todoitems");
-
+$itemNum = filter_input(INPUT_POST, 'ItemNum', FILTER_VALIDATE_INT);
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +31,9 @@ $todos = $db->query("SELECT * FROM todoitems");
 
 <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
     <div class="todo-item">
-    
-        <button action="model/deleteItem.php" type="submit" id="<?php echo $todo['ItemNum']; ?>"
-            class="remove-to-do">x</button>
+        <input type="hidden" name="action" value="delete_itemNum">
+        <input type="hidden" name="item_id" value="<?= $itemNum['ItemNum'] ?>">
+        <button class="remove-to-do">x</button>
         
     
         
