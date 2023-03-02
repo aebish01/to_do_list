@@ -4,7 +4,7 @@ require('controller/connection.php');
 
 
 $todos = $db->query("SELECT * FROM todoitems");
-$itemNum = filter_input(INPUT_POST, 'ItemNum', FILTER_VALIDATE_INT);
+$itemNum = filter_input(INPUT_POST, 'itemNum', FILTER_VALIDATE_INT);
 ?>
 
 <!DOCTYPE html>
@@ -31,18 +31,18 @@ $itemNum = filter_input(INPUT_POST, 'ItemNum', FILTER_VALIDATE_INT);
 
 <?php while($todo = $todos->fetch(PDO::FETCH_ASSOC)) { ?>
     <div class="todo-item">
-        <input type="hidden" name="action" value="delete_itemNum">
-        <input type="hidden" name="item_id" value="<?= $itemNum['ItemNum'] ?>">
-        <button class="remove-to-do">x</button>
-        
-    
-        
-        <h2 ><?php echo $todo['Title'] ?></h2>
-    
-    <br>
-    <small id="desc"><?php echo $todo['Description'] ?></small>
-    </div> 
+        <form action="." method="POST">
+            <input type="hidden" name="action" value="deleteItem">
+            <input type="hidden" name="itemNum" value="<?= $todo['ItemNum'] ?>">
+            <button>X</button>
+        </form>
+        <h2><?php echo $todo['Title'] ?></h2>
+        <br>
+        <small id="desc"><?php echo $todo['Description'] ?></small>
+    </div>
 <?php } ?>
+
+
     </main>
     <footer>
         <div class="addSect">
